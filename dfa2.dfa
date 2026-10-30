@@ -1,8 +1,11 @@
-alphabet: {0, 1}
-start: q0
-accepting: {q0, q1}
+alphabet: {a,b}
+start: q01
+accepting: {q0, q01, q02}
 
-q0 (0 -> q0) (1 -> q1)
-q1 (0 -> q0) (1 -> q2)
-q2 (0 -> q3) (1 -> q1)
-q3 (0 -> q3) (1 -> q3)
+q0 (a -> q2) (b -> dead)
+q2 (a -> dead) (b -> q02)
+q02 (a -> q2) (b -> q012)
+q01 (a -> q12)(b -> q2)
+q012 (a -> q12) (b -> q02)
+q12 (a -> q12) (b -> q02)
+dead ( a -> dead) (b -> dead)

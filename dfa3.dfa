@@ -1,9 +1,10 @@
-alphabet: {0, 1}
-start: q0
-accepting: {q0, q1, q2, q3}
-
-q0 (0 -> q1) (1 -> q0)
-q1 (0 -> q1) (1 -> q2)
-q2 (0 -> q1) (1 -> q3)
-q3 (0 -> q4) (1 -> q0)
-q4 (0 -> q4) (1 -> q4)
+alphabet: {0,1}
+start: q05
+accepting: {q0, q01, q02}
+q05 (0 -> dead) (1 -> q24)
+q24 (0 -> q34) (1 -> q1)
+q1 (0 -> q0) (1 -> dead)
+q0 (0 -> dead) (1 -> dead)
+q34 (0 -> q034) (1 -> dead)
+q034 (0 -> q034) (1 -> dead)
+dead (0 -> dead) (1 -> dead)
